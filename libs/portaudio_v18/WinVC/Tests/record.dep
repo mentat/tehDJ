@@ -1,0 +1,3 @@
+..\..\pa_tests\patest_record.c : \
+	"..\..\pa_common\portaudio.h"\
+	

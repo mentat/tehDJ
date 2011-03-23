@@ -1,0 +1,3 @@
+..\..\pa_tests\paqa_errs.c : \
+	"..\..\pa_common\portaudio.h"\
+	

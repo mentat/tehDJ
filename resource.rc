@@ -1,0 +1,2 @@
+aaaa     ICON "dj.ico"
+#include "wx/msw/wx.rc"

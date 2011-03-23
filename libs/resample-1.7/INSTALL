@@ -1,0 +1,33 @@
+INSTALL file for the resample package from the 
+Digital Audio Resampling Home Page located at
+http://www-ccrma.stanford.edu/~jos/resample/.
+
+Just say (as root)
+
+	make install
+
+to install the command-line programs 
+
+	resample
+	windowfilter 
+
+in /usr/local/bin/, and their man pages 
+
+	resample.1
+	windowfilter.1
+
+in /usr/local/man/man1/.  This should work without modifications on
+most UNIX systems (all testing donw under Red Hat Linux 6.1).
+
+Otherwise, you may first wish to edit the resample Makefile and modify
+DSTROOT, INSTALLDIR and MANDIR, as appropriate.  The architecture flag
+"-DLINUX" is only used by audio.c (from SNDLIB).
+
+After installation, say
+
+	make test
+
+to run some simple resample tests.
+
+That should do it, unless you want to change some compiler flags.
+(See BASE_CFLAGS AND CFLAGS further down in the file.)

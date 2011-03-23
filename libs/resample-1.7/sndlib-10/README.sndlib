@@ -1,0 +1,43 @@
+	S N D L I B
+
+The sound library is a collection of sound file and audio hardware
+handlers written in C and running currently on SGI (either audio
+library), NeXT (NeXTStep and OpenStep), Sun, Be, OSS (Linux and
+others), Mac, HPUX, LinuxPPC, and Windoze systems. It provides
+relatively straightforward access to many sound file headers and data
+types, and most of the features of the audio hardware.
+
+Documentation is in sndlib.html.
+
+To build it
+
+./configure
+make
+
+To install it
+
+make install
+
+The configure script takes several arguments:
+
+   --with-alsa          use ALSA if possible
+   --without-clm        don't include the CLM module
+   --without-guile      omit Guile even if it is available
+   --with-doubles       use doubles throughout (default is floats)
+   --without-shared     don't make sndlib.so
+   --with-float-samples represent samples internally as floats
+
+
+To make sndlib version 9 completely backwards compatible with code
+that used earlier versions, include the compiler flag
+-DMUS_SAMPLE_BITS=16, and make sure that old-sndlib.h is included as
+well as sndlib.h.
+
+Sndlib's internal representation of sample values can be either an
+integer with the "fixed point" at any place, or a float.  Except in
+the BeOS, the default is int with 24 "fractional" bits.  To get floats
+define SNDLIB_USE_FLOATS; to change the fractional bit width, set
+MUS_SAMPLE_BITS.  If you change this setting after using sndlib and
+you're using gdbm, you will need to delete sndlib.gdbm.
+
+

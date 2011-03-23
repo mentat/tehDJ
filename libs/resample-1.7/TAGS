@@ -1,0 +1,1754 @@
+
+resamplesubs.c,336
+#define IBUFFSIZE 10,180
+readData(23,512
+static int pof 76,2244
+static int nof 77,2295
+static INLINE HWORD WordToHword(80,2354
+  SrcLinear(112,3128
+static int SrcUp(145,4160
+static int SrcUD(180,5429
+static int err_ret(216,6875
+static int resampleFast(222,6995
+static int resampleWithFilter(322,10331
+int resample(441,14512
+
+sndlibextra.c,422
+sndlib_create(46,1477
+open_rd_or_rdwr(75,2304
+sndlib_open_read(116,3467
+sndlib_open_write(127,3768
+sndlib_close(142,4294
+sndlib_read_header(173,5214
+sndlib_write_header(217,6850
+sndlib_set_header_data_size(265,8368
+get_current_header_raw_comment(293,9413
+sndlib_current_header_match_aiff_flavor(355,11163
+sndlib_current_header_is_aifc(372,11668
+sndlib_allocate_buffers(388,12215
+sndlib_free_buffers(414,12782
+
+audio.c,25403
+#define STRBUF_SIZE 74,2781
+char *strerror(77,2865
+static char *version_name 94,3134
+static int AUDIO_ERROR 95,3168
+int mus_audio_error(96,3213
+void mus_audio_set_error(97,3262
+static int audio_initialized 98,3317
+static char *audio_error_name_1(100,3352
+static char *mus_audio_device_names[134,5864
+static char *mus_audio_format_names[146,6733
+static char *strbuf 153,7047
+int device_channels(159,7165
+int device_gains(166,7291
+#define AUDIO_OK191,7945
+static char *errstr 195,7983
+static int al_err 196,8011
+int mus_audio_systems(198,8035
+char *mus_audio_system_name(200,8151
+char *mus_audio_moniker(202,8209
+char *mus_audio_error_name(213,8351
+static int check_queue_size 220,8535
+#define STEREO_QUEUE_MIN_SIZE 224,8609
+#define STEREO_QUEUE_MIN_CHOICE 225,8644
+#define MONO_QUEUE_MIN_SIZE 227,8761
+#define MONO_QUEUE_MIN_CHOICE 228,8794
+#define STEREO_QUEUE_MAX_SIZE 229,8829
+#define STEREO_QUEUE_MAX_CHOICE 230,8866
+#define MONO_QUEUE_MAX_SIZE 231,8904
+#define MONO_QUEUE_MAX_CHOICE 232,8939
+static int check_queue_size 235,9054
+static void check_quad 244,9463
+static char *AL_GetErrorString(266,10094
+char *mus_audio_error_name(298,12169
+#define IO_LINES 307,12362
+static ALconfig *config 308,12381
+static ALport *port 309,12413
+static int *line_in_use 310,12441
+static int *channels 311,12473
+static long *device 312,12502
+static int *datum_size 313,12530
+static int *line_out 314,12561
+int mus_audio_initialize(316,12591
+static int error_exit(335,13208
+static int to_al_interface_or_device(347,13439
+static int to_al_device(368,14576
+static int to_al_interface(369,14666
+int find_audio_output(375,14823
+static int to_sgi_format(394,15199
+int mus_audio_open_output(407,15488
+int mus_audio_write(484,19520
+int mus_audio_close(496,19899
+int mus_audio_open_input(522,20553
+int mus_audio_read(607,24717
+#define MAX_CHANNELS 624,25194
+static float dB_to_linear(626,25218
+static float linear_to_dB(632,25321
+static float dB_to_normalized(637,25392
+static float normalized_to_dB(645,25598
+int mus_audio_mixer_read(651,25754
+int mus_audio_mixer_write(710,28885
+#define STRING_SIZE 752,30583
+static void dump_resources(753,30606
+static void describe_audio_state_1(811,32362
+} saved_info;saved_info826,32725
+static saved_info **si 828,32740
+static int saved_devices 829,32771
+static int saved_devices_size 830,32801
+static void save_devices(832,32837
+void mus_audio_save 880,34222
+void mus_audio_restore 900,34584
+#define MAX_VOLUME 930,35177
+static int decode_field(932,35201
+int mus_audio_mixer_read(997,37036
+int mus_audio_mixer_write(1048,38711
+static void describe_audio_state_1(1130,41382
+static long *init_state 1159,43362
+void mus_audio_save 1161,43395
+void mus_audio_restore 1182,44153
+#define AUDIO_OK1206,44635
+  #define NEW_OSS1236,45466
+#define MAX_VOLUME 1239,45492
+#define DAC_NAME 1241,45516
+#define MIXER_NAME 1242,45544
+#define SYNTH_NAME 1243,45576
+static int FRAGMENTS 1256,46263
+static int FRAGMENT_SIZE 1257,46289
+static int fragments_locked 1258,46320
+static void oss_mus_audio_set_oss_buffers(1264,46521
+static char *oss_mus_audio_error_name(1266,46645
+#define MAX_SOUNDCARDS 1268,46728
+#define MAX_DSPS 1269,46753
+#define MAX_MIXERS 1270,46772
+static int *audio_fd 1273,46888
+static int *audio_open_ctr 1274,46918
+static int *audio_dsp 1275,46954
+static int *audio_mixer 1276,46985
+static int *audio_type 1277,47018
+static int *audio_mode 1278,47050
+enum {NORMAL_CARD,1279,47082
+enum {NORMAL_CARD,SONORUS_STUDIO,1279,47082
+enum {NORMAL_CARD,SONORUS_STUDIO,RME_HAMMERFALL,1279,47082
+enum {NORMAL_CARD,SONORUS_STUDIO,RME_HAMMERFALL,SAM9407_DSP}1279,47082
+static int sound_cards 1282,47209
+static int new_oss_running 1283,47237
+static char *dev_name 1284,47269
+static int oss_mus_audio_systems(1286,47300
+static char *mixer_name(1291,47368
+static char *oss_mus_audio_system_name(1320,48089
+static char *oss_mus_audio_moniker(1363,48939
+static char *oss_mus_audio_moniker(1365,49008
+static char *dac_name(1380,49456
+void mus_audio_set_dsp_devices(1397,49854
+void mus_audio_dsp_devices(1411,50279
+void mus_audio_clear_soundcard_inputs(1424,50581
+#define MIXER_SIZE 1443,51375
+static int **mixer_state 1444,51416
+static int *init_srate 1445,51449
+static int dsp_reset 1448,51549
+void set_dsp_reset(1449,51628
+static int oss_mus_audio_initialize(1451,51676
+static int linux_audio_open(1713,59810
+static int find_system(1724,60091
+static int linux_audio_close(1735,60237
+static int error_exit(1757,60592
+static int to_oss_format(1764,60720
+static char sonorus_buf[1784,61309
+static char *sonorus_name(1785,61338
+static int oss_mus_audio_open_output(1791,61474
+static int oss_mus_audio_write(1892,66041
+static int oss_mus_audio_close(1899,66183
+static int oss_mus_audio_read(1905,66300
+static int oss_mus_audio_open_input(1912,66440
+static int oss_mus_audio_mixer_read(2035,71670
+static int oss_mus_audio_mixer_write(2365,87776
+static char *synth_names[2459,93615
+static char *synth_name(2467,94048
+static char *device_types[2474,94171
+static char *device_type(2476,94228
+static void yes_no 2483,94339
+static int set_dsp(2490,94454
+static void oss_describe_audio_state_1(2503,94764
+static void oss_mus_audio_save 2813,104794
+static void oss_mus_audio_restore 2839,105622
+static void oss_mus_audio_mixer_save(2863,106359
+static void oss_mus_audio_mixer_restore(2877,106666
+static int api 2912,107537
+int mus_audio_api(2913,107564
+int mus_audio_initialize(2946,109181
+void mus_audio_set_oss_buffers(2951,109241
+char* mus_audio_error_name(2956,109350
+int mus_audio_systems(2961,109434
+char* mus_audio_system_name(2966,109504
+char* mus_audio_moniker(2975,109662
+int mus_audio_open_output(2990,110086
+int mus_audio_open_input(2995,110248
+int mus_audio_write(3000,110428
+int mus_audio_read(3005,110532
+int mus_audio_close(3010,110634
+int mus_audio_mixer_read(3015,110704
+int mus_audio_mixer_write(3020,110843
+void mus_audio_save(3025,110984
+void mus_audio_restore(3030,111049
+void mus_audio_mixer_save(3035,111120
+void mus_audio_mixer_restore(3040,111213
+static void describe_audio_state_1(3045,111311
+static int probe_api(3051,111416
+#define AUDIO_OK3115,114049
+static int probe_api(3143,115327
+static int samples_per_channel 3198,117724
+static int fragment_size 3204,117846
+static int fragments 3205,117879
+static void alsa_mus_audio_set_oss_buffers 3207,117906
+static char *alsa_mus_audio_error_name(3215,118133
+typedef struct device_info device_info3224,118434
+} device_info_t;device_info_t3232,118652
+typedef struct device_info device_info3234,118675
+} device_info_t;device_info_t3246,118983
+typedef struct handle_info handle_info3251,119077
+} handle_info_t;handle_info_t3259,119268
+#define MAX_HANDLES 3263,119338
+static handle_info_t handles[3264,119372
+typedef struct card_info card_info3268,119468
+} card_info_t;card_info_t3270,119524
+static card_info_t card_info[3274,119580
+static device_info_t *device_info[3279,119702
+static device_info_t *device_info[3281,119754
+static int use_plugins=3311,121206
+static void alsa_initialize_functions(3313,121233
+  static int stop_mode=3355,122369
+  static int stop_mode=3357,122418
+static int trace_calls=3366,122590
+static const char *decode_mus_audio_field(3370,122665
+static const char *decode_mus_audio_device(3377,122831
+static const char *decode_mus_format(3384,123001
+static const char *decode_alsa_format(3391,123163
+static void set_priority(3457,125081
+static void set_priority(3474,125511
+static int alsa_mus_audio_initialize(3480,125651
+static int alsa_mus_audio_initialize(3579,128993
+static int alsa_mus_audio_systems(3687,132446
+static char *alsa_mus_audio_system_name(3694,132570
+static char *alsa_mus_audio_moniker(3705,132799
+static int to_alsa_format(3714,133066
+static int to_mus_format(3761,134232
+static int to_alsa_device(3829,136234
+static int to_sndlib_device(3920,138656
+static device_info_t *alsa_get_info(3954,139439
+static device_info_t *alsa_get_info(3969,139732
+static int alsa_audio_close(3986,140057
+static int alsa_audio_open(4049,142313
+static int alsa_audio_open(4111,144525
+static int alsa_mus_audio_open_output(4173,146747
+static int alsa_mus_audio_open_output(4263,150241
+static int alsa_mus_audio_open_input(4353,153719
+static int alsa_mus_audio_open_input(4429,156525
+static int underruns 4502,159220
+static int alsa_mus_audio_write(4505,159290
+static int alsa_mus_audio_write(4538,160420
+static int alsa_mus_audio_read(4585,162014
+static int alsa_mus_audio_read(4633,163507
+static int alsa_mus_audio_close(4683,165135
+static int alsa_mus_audio_mixer_read(4697,165463
+static int alsa_mus_audio_mixer_write(4855,170094
+static void alsa_mus_audio_save 4861,170227
+static void alsa_mus_audio_restore 4865,170271
+static void alsa_mus_audio_mixer_save(4869,170318
+static void alsa_mus_audio_mixer_restore(4873,170379
+static void alsa_describe_audio_state_1(4878,170486
+static void alsa_describe_audio_state_1(5038,176412
+#define AUDIO_OK5060,176795
+static int low_water 5073,177001
+static int high_water 5074,177033
+static port_t dev_port 5075,177066
+static port_t owner_port 5076,177094
+static port_t write_port 5077,177124
+static port_t read_port 5078,177154
+static port_t reply_port 5079,177183
+static short *rtbuf 5080,177213
+static int rtbuf_size 5081,177241
+static char *readbuf;5082,177268
+#define WRITE_TAG 5083,177290
+#define READ_TAG 5084,177310
+#define BYTES_PER_SAMPLE 5085,177329
+#define WRITE_COMPLETED_MSG 5086,177356
+#define OUTPUT_LINE 5087,177386
+#define INPUT_LINE 5088,177408
+static int nxt_err 5090,177430
+static char errstr[5091,177454
+char *mus_audio_error_name(5093,177480
+int mus_audio_systems(5100,177664
+char *mus_audio_system_name(5101,177705
+char *mus_audio_moniker(5102,177763
+static int waiting 5104,177818
+static void write_completed(5106,177843
+int mus_audio_initialize(5111,177932
+static int output_chans 5112,178010
+static snddriver_handlers_t replyHandlers;5113,178039
+static msg_header_t *reply_msg;5114,178082
+int mus_audio_open_output(5116,178115
+int mus_audio_write(5167,179998
+int mus_audio_close(5230,182372
+static void read_completed(5276,184069
+int mus_audio_open_input(5287,184340
+int mus_audio_read(5314,185586
+#define MAX_VOLUME 5330,186109
+int mus_audio_mixer_read(5332,186134
+int mus_audio_mixer_write(5377,187727
+static void describe_audio_state_1(5414,188814
+static int saved_left,5433,189500
+static int saved_left,saved_right,5433,189500
+static int saved_left,saved_right,saved_mute,5433,189500
+static int saved_left,saved_right,saved_mute,saved_filter;5433,189500
+void mus_audio_save 5435,189560
+void mus_audio_restore 5442,189693
+#define AUDIO_OK5462,190199
+int mus_audio_initialize(5478,190418
+char *mus_audio_error_name(5479,190496
+int mus_audio_systems(5480,190567
+char *mus_audio_system_name(5481,190608
+static int sun_default_outputs 5483,190666
+void mus_audio_sun_outputs(5485,190752
+  #define DAC_NAME 5495,191038
+  #define DAC_NAME 5497,191076
+#define AUDIODEV_ENV 5499,191115
+static int error_exit(5501,191148
+char *mus_audio_moniker(5508,191264
+static int to_sun_format(5541,192455
+int mus_audio_open_output(5570,193069
+int mus_audio_write(5616,194957
+int mus_audio_close(5623,195088
+int mus_audio_read(5631,195217
+int mus_audio_open_input(5656,195892
+int mus_audio_mixer_read(5722,198958
+int mus_audio_mixer_write(5862,204378
+static char *sun_format_name(5977,208118
+static char *sun_in_device_name(6011,209016
+static char *sun_out_device_name(6023,209582
+static char *sun_vol_name 6035,210149
+static char *sun_volume_name(6036,210183
+static void describe_audio_state_1(6050,210601
+static struct audio_info saved_info;6106,212874
+void mus_audio_save 6108,212912
+void mus_audio_restore 6120,213288
+#define AUDIO_OK6138,213776
+char *mus_audio_error_name(6144,213861
+int mus_audio_systems(6145,213932
+char *mus_audio_system_name(6146,214004
+static int available_input_devices(6148,214062
+static int input_device_is_connected(6164,214366
+static int input_device_get_source(6172,214537
+static int input_device_set_source(6180,214693
+static int input_device_get_sources(6187,214864
+static int input_device_channels 6200,215273
+static int input_device_get_async(6209,215462
+static char *input_device_name(6218,215640
+static float input_device_get_gain(6229,215877
+static int input_device_set_gain(6240,216141
+static int input_device_get_channels(6249,216344
+static int input_device_set_channels(6257,216525
+static int input_device_get_quality(6264,216700
+static int input_device_set_quality(6279,217057
+static int input_device_get_srate(6291,217406
+static int input_device_set_srate(6300,217619
+static int input_device_get_sample_size(6309,217868
+static int input_device_set_sample_size(6318,218054
+static int input_device_get_signed(6325,218226
+static int input_device_set_signed(6334,218426
+static int input_device_sample_rates(6341,218593
+static int input_device_sample_sizes(6361,219419
+static int input_device_get_gains(6379,219872
+static int input_device_set_gains(6393,220166
+char *mus_audio_moniker(6403,220406
+static char *quality_names[6412,220695
+static void describe_audio_state_1(6414,220775
+#define BUFFER_FILLED 6539,226973
+#define BUFFER_EMPTY 6540,226997
+#define SOUND_UNREADY 6542,227021
+#define SOUND_INITIALIZED 6543,227045
+#define SOUND_RUNNING 6544,227073
+#define INPUT_LINE 6546,227098
+#define OUTPUT_LINE 6547,227119
+static int buffer_size 6549,227142
+static SndDoubleBufferPtr *db 6550,227173
+static SndDoubleBufferHeader dh;6551,227211
+static SndChannelPtr chan;6552,227244
+static int *db_state 6553,227271
+static int sound_state 6554,227300
+static int current_chans 6555,227328
+static int current_datum_size 6556,227358
+static int current_srate 6557,227393
+static int current_buf 6558,227427
+static long in_ref 6559,227455
+static SPB spb;6560,227480
+#define DATA_EMPTY 6562,227497
+#define DATA_READY 6563,227518
+#define DATA_WRITTEN 6564,227539
+static int data_status 6565,227562
+static int data_bytes 6566,227599
+static char *data 6567,227626
+  static void reset_db(6571,227679
+static pascal void nextbuffer(6581,227814
+int mus_audio_open_output(6586,227930
+static OSErr fill_buffer(6631,229575
+static OSErr wait_for_empty_buffer(6648,230088
+int mus_audio_write(6661,230368
+int mus_audio_close(6685,231081
+static void read_callback(6728,232447
+int mus_audio_open_input(6741,232787
+int mus_audio_read(6769,233965
+int mus_audio_mixer_read(6787,234541
+int mus_audio_mixer_write(6868,236968
+static long beep_vol 6934,238975
+void mus_audio_save(6936,239014
+void mus_audio_restore(6942,239113
+int mus_audio_initialize(6948,239213
+#define AUDIO_OK6962,239454
+char *mus_audio_error_name(6966,239507
+int mus_audio_systems(6967,239578
+char *mus_audio_system_name(6968,239619
+char *mus_audio_moniker(6969,239675
+static void describe_audio_state_1(6971,239728
+#define DATA_EMPTY 6975,239777
+#define DATA_READY 6976,239798
+#define DATA_WRITTEN 6977,239819
+static int data_status;6978,239842
+static int data_bytes;6979,239866
+static float *data 6980,239889
+#define SOUND_UNREADY 6982,239917
+#define SOUND_INITIALIZED 6983,239941
+#define SOUND_RUNNING 6984,239969
+static int sound_state 6985,239993
+static BSoundPlayer player;6987,240034
+static void write_callback(6989,240063
+int mus_audio_open_output(7001,240408
+int mus_audio_open_input(7013,240712
+int mus_audio_write(7017,240799
+int mus_audio_close(7035,241272
+int mus_audio_read(7046,241442
+int mus_audio_mixer_read(7050,241499
+int mus_audio_mixer_write(7054,241575
+void mus_audio_save(7058,241652
+void mus_audio_restore(7062,241684
+int mus_audio_initialize(7066,241719
+#define AUDIO_OK7083,242133
+char *mus_audio_moniker(7086,242174
+int mus_audio_open_output(7088,242229
+int mus_audio_write(7119,243398
+int mus_audio_close(7126,243529
+static void describe_audio_state_1(7133,243629
+int mus_audio_mixer_read(7177,245555
+int mus_audio_mixer_write(7255,248347
+static int saved_gains[7312,250240
+void mus_audio_save(7314,250268
+void mus_audio_restore(7330,250767
+int mus_audio_initialize(7346,251291
+char *mus_audio_error_name(7348,251370
+int mus_audio_systems(7349,251441
+char *mus_audio_system_name(7350,251482
+int mus_audio_open_input(7357,251682
+int mus_audio_read(7385,252758
+#define AUDIO_OK7398,253035
+#define BUFFER_FILLED 7404,253116
+#define BUFFER_EMPTY 7405,253140
+#define OUTPUT_LINE 7407,253164
+#define INPUT_LINE 7408,253186
+#define SOUND_UNREADY 7410,253208
+#define SOUND_INITIALIZED 7411,253232
+#define SOUND_RUNNING 7412,253260
+static int buffer_size 7414,253285
+static int db_state[7415,253316
+static int sound_state 7416,253340
+static int current_chans 7417,253368
+static int current_datum_size 7418,253398
+static int current_buf 7419,253433
+WAVEHDR wh[7420,253461
+HWAVEOUT fd;7421,253476
+HWAVEIN record_fd;7422,253489
+WAVEHDR rec_wh;7423,253508
+static int rec_state 7424,253524
+static MMRESULT win_in_err 7426,253563
+static char errstr[7427,253609
+static char errstr[128],getstr[7427,253609
+char *mus_audio_error_name(7429,253647
+int mus_audio_systems(7439,253964
+char *mus_audio_system_name(7444,254105
+DWORD CALLBACK next_buffer(7446,254167
+int mus_audio_open_output(7455,254350
+static MMRESULT fill_buffer(7517,256533
+static void wait_for_empty_buffer(7533,256990
+int mus_audio_write(7541,257177
+static int out_saved 7575,258219
+static DWORD *out_vols 7576,258260
+static int *out_set 7577,258309
+void mus_audio_save(7579,258355
+void mus_audio_restore(7638,259955
+static float unlog(7657,260320
+#define SRATE_11025_BITS 7665,260585
+#define SRATE_22050_BITS 7666,260686
+#define SRATE_44100_BITS 7667,260787
+#define SHORT_SAMPLE_BITS 7668,260888
+#define BYTE_SAMPLE_BITS 7669,261028
+static char *mfg(7671,261168
+static char *mixer_status_name(7715,265203
+static char *mixer_target_name(7726,265511
+static char *mixer_component_name(7740,266005
+#define MAX_DESCRIBE_CHANS 7768,267565
+#define MAX_DESCRIBE_CONTROLS 7769,267594
+char *mus_audio_moniker(7773,267787
+static void describe_audio_state_1(7775,267875
+int mus_audio_initialize(8127,285921
+int mus_audio_close(8133,286007
+static int current_record_chans 8187,287680
+DWORD CALLBACK next_input_buffer(8189,287749
+int mus_audio_open_input(8199,287947
+int mus_audio_read(8247,289329
+int mus_audio_mixer_read(8254,289454
+int mus_audio_mixer_write(8277,290056
+#define AUDIO_OK8309,290921
+#define DAC_NAME 8325,291307
+int audio_started 8327,291342
+int mus_audio_open_output(8329,291366
+int mus_audio_write(8375,292817
+int mus_audio_close(8393,293280
+static void describe_audio_state_1(8400,293366
+int mus_audio_open_input(8401,293438
+int mus_audio_read(8402,293545
+int mus_audio_mixer_read(8403,293610
+int mus_audio_mixer_write(8404,293691
+void mus_audio_save(8405,293773
+void mus_audio_restore(8406,293802
+int mus_audio_initialize(8407,293834
+char *mus_audio_error_name(8408,293913
+int mus_audio_systems(8409,293984
+char *mus_audio_system_name(8410,294025
+void mus_audio_set_oss_buffers(8411,294082
+char *mus_audio_moniker(8412,294134
+#define AUDIO_OK8421,294302
+#define DAC_NAME 8427,294396
+static struct AU_Volume audio_vol;8429,294435
+static struct AU_Type audio_type;8430,294470
+static struct AU_Line audio_line;8431,294504
+static struct AU_Status audio_status;8432,294538
+static int valid[8434,294577
+int mus_audio_open_output(8439,294781
+int mus_audio_write(8470,295558
+int mus_audio_close(8476,295654
+static void describe_audio_state_1(8488,295920
+int mus_audio_open_input(8489,295992
+int mus_audio_read(8490,296099
+int mus_audio_mixer_read(8491,296164
+int mus_audio_mixer_write(8492,296245
+void mus_audio_save(8493,296327
+void mus_audio_restore(8494,296356
+int mus_audio_initialize(8495,296388
+char *mus_audio_error_name(8496,296467
+int mus_audio_systems(8497,296538
+char *mus_audio_system_name(8498,296579
+void mus_audio_set_oss_buffers(8499,296640
+char *mus_audio_moniker(8500,296692
+#define AUDIO_OK8507,296866
+static int sony_audio_rate1[8518,297090
+static int sony_audio_rate2[8523,297301
+static int sony_audio_rate3[8526,297420
+int sony_audio_buf_len 8529,297488
+static struct sbparam	audio_info 8530,297513
+static int *sony_audio_rate;8531,297548
+static int sony_max_vol,8532,297577
+static int sony_max_vol, sony_min_vol;8532,297577
+int mus_audio_open_output(8534,297617
+int mus_audio_write(8590,299084
+int mus_audio_close(8597,299208
+int mus_audio_open_input(8625,299865
+static void describe_audio_state_1(8626,299957
+int mus_audio_read(8627,300029
+int mus_audio_mixer_read(8628,300094
+int mus_audio_mixer_write(8629,300175
+void mus_audio_save(8630,300257
+void mus_audio_restore(8631,300286
+int mus_audio_initialize(8632,300318
+char *mus_audio_error_name(8633,300363
+int mus_audio_systems(8634,300434
+char *mus_audio_system_name(8635,300475
+void mus_audio_set_oss_buffers(8636,300538
+char *mus_audio_moniker(8637,300590
+#define AUDIO_OK8644,300787
+int mus_audio_open_output(8654,300982
+int mus_audio_write(8690,302069
+int mus_audio_close(8696,302165
+int mus_audio_open_input(8707,302376
+static void describe_audio_state_1(8708,302468
+int mus_audio_read(8709,302540
+int mus_audio_mixer_read(8710,302605
+int mus_audio_mixer_write(8711,302686
+void mus_audio_save(8712,302768
+void mus_audio_restore(8713,302797
+int mus_audio_initialize(8714,302829
+char *mus_audio_error_name(8715,302874
+int mus_audio_systems(8716,302945
+char *mus_audio_system_name(8717,302986
+void mus_audio_set_oss_buffers(8718,303046
+char *mus_audio_moniker(8719,303098
+#define AUDIO_OK8726,303271
+static AFAudioConn *AFaud;8733,303381
+static AC ac;8734,303408
+static AFSetACAttributes AFattributes;8735,303422
+static ATime AFtime0=8736,303461
+static ATime AFbaseT=8737,303485
+#define	AF_C_MIN	8738,303509
+#define	AF_C_MAX	8739,303530
+#define AF_MAP_TO_C_GAIN(AF_MAP_TO_C_GAIN8740,303550
+#define SPU(SPU8742,303632
+#define BPU(BPU8743,303693
+#define DPHONE(DPHONE8745,303755
+#define DFREQ(DFREQ8746,303837
+#define DCHAN(DCHAN8747,303918
+#define DTYPE(DTYPE8748,303996
+#define	TOFFSET	8750,304068
+static int FindDefaultDevice(8751,304088
+int mus_audio_open_output(8769,304474
+int mus_audio_write(8791,305188
+int mus_audio_close(8800,305419
+int mus_audio_open_input(8813,305692
+static void describe_audio_state_1(8814,305784
+int mus_audio_read(8815,305856
+int mus_audio_mixer_read(8816,305921
+int mus_audio_mixer_write(8817,306002
+void mus_audio_save(8818,306084
+void mus_audio_restore(8819,306113
+int mus_audio_initialize(8820,306145
+char *mus_audio_error_name(8821,306190
+int mus_audio_systems(8822,306261
+char *mus_audio_system_name(8823,306302
+void mus_audio_set_oss_buffers(8824,306365
+char *mus_audio_moniker(8825,306417
+#define AUDIO_OK8833,306582
+#define  INCL_OS2MM8838,306655
+#define BUFNUM 8840,306694
+#define BUFSIZE 8841,306716
+} ple;ple8847,306828
+MCI_WAVE_SET_PARMS msp;8848,306835
+MCI_PLAY_PARMS mpp;8849,306859
+int id,8850,306879
+int id, pos=8850,306879
+ple pl[8851,306894
+static struct audio_info_struct *ai;8853,306913
+int mus_audio_open_output(8855,306951
+int mus_audio_write(8896,308200
+int mus_audio_close(8907,308471
+int mus_audio_open_input(8921,308811
+static void describe_audio_state_1(8922,308903
+int mus_audio_read(8923,308975
+int mus_audio_mixer_read(8924,309040
+int mus_audio_mixer_write(8925,309121
+void mus_audio_save(8926,309203
+void mus_audio_restore(8927,309232
+int mus_audio_initialize(8928,309264
+char *mus_audio_error_name(8929,309309
+int mus_audio_systems(8930,309380
+char *mus_audio_system_name(8931,309421
+void mus_audio_set_oss_buffers(8932,309478
+char *mus_audio_moniker(8933,309530
+#define AUDIO_OK8941,309700
+void describe_audio_state_1(8945,309794
+int mus_audio_initialize 8949,309833
+char *mus_audio_error_name(8954,309877
+int mus_audio_open_output(8959,309948
+int mus_audio_open_input(8964,310043
+int mus_audio_write(8969,310137
+int mus_audio_write_channel(8974,310209
+int mus_audio_flush(8980,310350
+int mus_audio_close(8985,310397
+int mus_audio_read(8990,310443
+int mus_audio_mixer_read(8996,310539
+int mus_audio_mixer_write(9002,310633
+void mus_audio_save(9007,310717
+void mus_audio_restore(9011,310748
+int mus_audio_systems(9015,310782
+char *mus_audio_system_name(9020,310827
+char *mus_audio_moniker(9025,310897
+static void describe_audio_state_1(9038,311159
+int mus_audio_open_output(9039,311231
+int mus_audio_open_input(9040,311324
+int mus_audio_write(9041,311416
+int mus_audio_close(9042,311482
+int mus_audio_read(9043,311526
+int mus_audio_mixer_read(9044,311591
+int mus_audio_mixer_write(9045,311672
+void mus_audio_save(9046,311754
+void mus_audio_restore(9047,311783
+int mus_audio_initialize(9048,311815
+char *mus_audio_error_name(9049,311860
+int mus_audio_systems(9050,311931
+char *mus_audio_system_name(9051,311972
+void mus_audio_set_oss_buffers(9052,312033
+char *mus_audio_moniker(9053,312085
+static char *save_it 9058,312152
+static int print_it 9059,312181
+static int save_it_len 9060,312206
+static int save_it_loc 9061,312234
+static void check_save_it(9063,312263
+static void pprint(9086,312675
+char *mus_audio_report(9109,313063
+void mus_audio_describe(9123,313330
+void reset_audio_c 9131,313456
+
+io.c,6565
+void mus_bint_to_char(52,1525
+int mus_char_to_bint 63,1762
+void mus_lint_to_char(76,2058
+int mus_char_to_lint 87,2296
+int mus_char_to_uninterpreted_int 100,2593
+unsigned int mus_char_to_ubint 109,2798
+unsigned int mus_char_to_ulint 122,3113
+void mus_bfloat_to_char(136,3430
+float mus_char_to_bfloat 147,3671
+void mus_lfloat_to_char(160,3973
+float mus_char_to_lfloat 171,4215
+void mus_bshort_to_char(184,4518
+short mus_char_to_bshort 195,4711
+void mus_lshort_to_char(208,4949
+short mus_char_to_lshort 219,5143
+void mus_ubshort_to_char(232,5382
+unsigned short mus_char_to_ubshort 243,5585
+void mus_ulshort_to_char(256,5842
+unsigned short mus_char_to_ulshort 267,6046
+double mus_char_to_ldouble 280,6304
+double mus_char_to_bdouble 296,6686
+void mus_bdouble_to_char(312,7067
+void mus_ldouble_to_char(326,7382
+  #define m_big_endian_short(m_big_endian_short348,7889
+  #define m_big_endian_int(m_big_endian_int349,7985
+  #define m_big_endian_short(m_big_endian_short351,8083
+  #define m_big_endian_int(m_big_endian_int352,8157
+  #define m_big_endian_float(m_big_endian_float354,8236
+  #define m_big_endian_double(m_big_endian_double355,8310
+  #define m_big_endian_unsigned_short(m_big_endian_unsigned_short356,8385
+  #define m_little_endian_short(m_little_endian_short358,8461
+  #define m_little_endian_int(m_little_endian_int359,8527
+  #define m_little_endian_float(m_little_endian_float360,8591
+  #define m_little_endian_double(m_little_endian_double361,8657
+  #define m_little_endian_unsigned_short(m_little_endian_unsigned_short362,8724
+  #define m_set_big_endian_short(m_set_big_endian_short364,8800
+  #define m_set_big_endian_int(m_set_big_endian_int365,8874
+  #define m_set_big_endian_float(m_set_big_endian_float366,8946
+  #define m_set_big_endian_double(m_set_big_endian_double367,9020
+  #define m_set_big_endian_unsigned_short(m_set_big_endian_unsigned_short368,9095
+  #define m_set_little_endian_short(m_set_little_endian_short370,9171
+  #define m_set_little_endian_int(m_set_little_endian_int371,9241
+  #define m_set_little_endian_float(m_set_little_endian_float372,9309
+  #define m_set_little_endian_double(m_set_little_endian_double373,9379
+  #define m_set_little_endian_unsigned_short(m_set_little_endian_unsigned_short374,9450
+    #define m_big_endian_short(m_big_endian_short379,9551
+    #define m_big_endian_int(m_big_endian_int380,9619
+    #define m_big_endian_float(m_big_endian_float381,9685
+    #define m_big_endian_double(m_big_endian_double382,9753
+    #define m_big_endian_unsigned_short(m_big_endian_unsigned_short383,9822
+    #define m_set_big_endian_short(m_set_big_endian_short385,9900
+    #define m_set_big_endian_int(m_set_big_endian_int386,9972
+    #define m_set_big_endian_float(m_set_big_endian_float387,10042
+    #define m_set_big_endian_double(m_set_big_endian_double388,10114
+    #define m_set_big_endian_unsigned_short(m_set_big_endian_unsigned_short389,10187
+    #define m_big_endian_short(m_big_endian_short391,10276
+    #define m_big_endian_int(m_big_endian_int392,10352
+    #define m_big_endian_float(m_big_endian_float393,10426
+    #define m_big_endian_double(m_big_endian_double394,10502
+    #define m_big_endian_unsigned_short(m_big_endian_unsigned_short395,10579
+    #define m_set_big_endian_short(m_set_big_endian_short397,10657
+    #define m_set_big_endian_int(m_set_big_endian_int398,10733
+    #define m_set_big_endian_float(m_set_big_endian_float399,10807
+    #define m_set_big_endian_double(m_set_big_endian_double400,10883
+    #define m_set_big_endian_unsigned_short(m_set_big_endian_unsigned_short401,10960
+  #define m_little_endian_short(m_little_endian_short405,11064
+  #define m_little_endian_int(m_little_endian_int406,11162
+  #define m_little_endian_short(m_little_endian_short408,11262
+  #define m_little_endian_int(m_little_endian_int409,11338
+  #define m_little_endian_float(m_little_endian_float411,11419
+  #define m_little_endian_double(m_little_endian_double412,11495
+  #define m_little_endian_unsigned_short(m_little_endian_unsigned_short413,11572
+  #define m_set_little_endian_short(m_set_little_endian_short415,11650
+  #define m_set_little_endian_int(m_set_little_endian_int416,11726
+  #define m_set_little_endian_float(m_set_little_endian_float417,11800
+  #define m_set_little_endian_double(m_set_little_endian_double418,11876
+  #define m_set_little_endian_unsigned_short(m_set_little_endian_unsigned_short419,11953
+static int rt_ap_out;426,12098
+void set_rt_audio_p 429,12174
+} io_fd;io_fd439,12372
+static int io_fd_size 441,12382
+static io_fd **io_fds 442,12409
+static int alloc_io_fd(444,12440
+int mus_file_open_descriptors 470,12994
+int mus_file_set_descriptors 485,13411
+int mus_file_close_descriptors(503,13924
+int mus_file_cleanup_descriptors(514,14178
+int mus_file_set_data_clipped 524,14411
+int mus_file_set_header_type 533,14642
+int mus_file_header_type(542,14865
+float mus_file_prescaler(550,15061
+float mus_file_set_prescaler(558,15257
+char *mus_file_fd_name(567,15482
+int mus_file_set_chans 575,15671
+int mus_file_open_read(587,15945
+int mus_file_probe(602,16183
+int mus_file_open_write(623,16539
+int mus_file_create(650,17064
+int mus_file_reopen_write(665,17262
+int mus_file_close(680,17489
+long mus_file_seek(690,17624
+int mus_file_seek_frame(739,19168
+#define	SIGN_BIT	779,20471
+#define	QUANT_MASK	780,20529
+#define	NSEGS	781,20586
+#define	SEG_SHIFT	782,20638
+#define	SEG_MASK	783,20698
+static short seg_end[785,20750
+static int search(787,20838
+static unsigned char to_alaw(794,20984
+static const int alaw[809,21408
+static int from_alaw(829,23091
+#define	BIAS	845,23424
+static unsigned char to_mulaw(847,23475
+static const int mulaw[863,23919
+static int from_mulaw(884,25707
+static MUS_SAMPLE_TYPE **long_int_p_table 897,26024
+static int long_int_p_table_size 898,26074
+MUS_SAMPLE_TYPE *mus_table2ptr(900,26113
+int mus_ptr2table(902,26187
+void mus_untableptr(930,26853
+#define BUFLIM 939,27000
+static int checked_write(941,27026
+static int mus_read_any_1(985,28365
+int mus_file_read_any(1137,34177
+int mus_file_read_file(1142,34349
+int mus_file_read_buffer(1147,34503
+int mus_file_read(1152,34710
+int mus_file_read_chans(1173,35137
+#define min(min1205,35794
+int mus_file_write_zeros(1207,35837
+static int mus_write_1(1236,36807
+int mus_file_write(1384,42116
+int mus_file_write_file(1389,42256
+int mus_file_write_buffer(1394,42401
+void reset_io_c(1401,42629
+char *mus_file_full_name(1412,42777
+
+headers.c,11820
+static int hdrbuf_is_inited 108,5527
+#define HDRBUFSIZ 110,5561
+  static unsigned char *hdrbuf;112,5597
+  static char *hdrbuf;114,5637
+#define INITIAL_READ_SIZE 117,5668
+#define AUX_COMMENTS 120,5784
+static int *aux_comment_start 121,5807
+#define LOOPS 123,5871
+static int *loop_modes 124,5887
+static int markers 125,5956
+static int *marker_ids 126,5980
+void reset_headers_c(129,6048
+int mus_header_initialize 136,6128
+static const unsigned char I_DSND[162,6967
+static const unsigned char I_FORM[163,7065
+static const unsigned char I_AIFF[164,7146
+static const unsigned char I_AIFC[165,7228
+static const unsigned char I_COMM[166,7328
+static const unsigned char I_COMT[167,7386
+static const unsigned char I_INFO[168,7444
+static const unsigned char I_INST[169,7502
+static const unsigned char I_inst[170,7560
+static const unsigned char I_MARK[171,7669
+static const unsigned char I_SSND[172,7727
+static const unsigned char I_FVER[173,7785
+static const unsigned char I_NONE[174,7843
+static const unsigned char I_ULAW[175,7901
+static const unsigned char I_ulaw[176,8008
+static const unsigned char I_ima4[177,8109
+static const unsigned char I_raw_[178,8200
+static const unsigned char I_sowt[179,8339
+static const unsigned char I_fl32[180,8424
+static const unsigned char I_fl64[181,8508
+static const unsigned char I_twos[182,8592
+static const unsigned char I_ALAW[183,8674
+static const unsigned char I_alaw[184,8732
+static const unsigned char I_APPL[185,8803
+static const unsigned char I_MUS_[186,8861
+static const unsigned char I_RIFF[187,8962
+static const unsigned char I_RIFX[188,9043
+static const unsigned char I_WAVE[189,9147
+static const unsigned char I_fmt_[190,9205
+static const unsigned char I_data[191,9263
+static const unsigned char I_fact[192,9321
+static const unsigned char I_clm_[193,9416
+static const unsigned char I_NIST[194,9474
+static const unsigned char I_8SVX[195,9571
+static const unsigned char I_VOC0[196,9654
+static const unsigned char I_VOC1[197,9756
+static const unsigned char I_SOUN[198,9814
+static const unsigned char I_SMP1[199,9963
+static const unsigned char I_SMP2[200,10021
+static const unsigned char I_BODY[201,10079
+static const unsigned char I_VHDR[202,10172
+static const unsigned char I_CHAN[203,10230
+static const unsigned char I_ANNO[204,10288
+static const unsigned char I_NAME[205,10346
+static const unsigned char I_AVR_[206,10404
+static const unsigned char I_HCOM[207,10493
+static const unsigned char I_FSSD[208,10551
+static const unsigned char I_SPIB[209,10609
+static const unsigned char I_S___[210,10715
+static const unsigned char I_ALaw[211,10827
+static const unsigned char I_Soun[212,10923
+static const unsigned char I_MAUD[213,10995
+static const unsigned char I_MHDR[214,11088
+static const unsigned char I_MDAT[215,11146
+static const unsigned char I_mdat[216,11204
+static const unsigned char I_AFsp[217,11279
+static const unsigned char I_MThd[218,11337
+static const unsigned char I_DVSM[219,11421
+static const unsigned char I_DECN[220,11511
+static const unsigned char I_Esig[221,11604
+static const unsigned char I_nalc[222,11697
+static const unsigned char I_sfbk[223,11791
+static const unsigned char I_sdta[224,11870
+static const unsigned char I_shdr[225,11928
+static const unsigned char I_pdta[226,11986
+static const unsigned char I_LIST[227,12044
+static const unsigned char I_GF1P[228,12102
+static const unsigned char I_ATCH[229,12210
+static const unsigned char I_DSIG[230,12287
+static const unsigned char I_NAL_[231,12384
+static const unsigned char I_GOLD[232,12461
+static const unsigned char I__WAV[233,12561
+static const unsigned char I_SRFS[234,12638
+static const unsigned char I_Diam[235,12745
+static const unsigned char I_ondW[236,12838
+static const unsigned char I_Drat[237,12915
+static const unsigned char I_CSRE[238,13010
+static const unsigned char I_SND_[239,13117
+static const unsigned char I_SNIN[240,13194
+static const unsigned char I_SNDT[241,13252
+static const unsigned char I_DDSF[242,13310
+static const unsigned char I_FSMt[243,13403
+static const unsigned char I_SDXc[244,13501
+static const unsigned char I_UWFD[245,13594
+static const unsigned char I_LM89[246,13683
+static const unsigned char I_SY80[247,13761
+static const unsigned char I_SY85[248,13839
+static const unsigned char I_SCRS[249,13917
+static const unsigned char I_covox[250,13997
+static const unsigned char I_DSPL[251,14068
+static const unsigned char I_AVI_[252,14164
+static const unsigned char I_strf[253,14238
+static const unsigned char I_movi[254,14298
+static const unsigned char I_PRAM[255,14358
+static const unsigned char I_ones[256,14437
+static const unsigned char I_zeros[257,14507
+static const unsigned char I_asf0[258,14570
+static const unsigned char I_asf1[259,14640
+static const unsigned char I_asf2[260,14710
+static const unsigned char I_asf3[261,14780
+static const unsigned char I__PAF[262,14850
+static const unsigned char I_FAP_[263,14929
+static const unsigned char I_DS16[264,15008
+static const unsigned char I_HEDR[265,15077
+static const unsigned char I_HDR8[266,15137
+static const unsigned char I_SDA_[267,15197
+static const unsigned char I_SDAB[268,15257
+static const unsigned char I_SD_B[269,15317
+static const unsigned char I_NOTE[270,15377
+static const unsigned char I_file[271,15437
+static const unsigned char I__sam[272,15514
+#define I_IRCAM_VAX 277,15630
+#define I_IRCAM_SUN 278,15662
+#define I_IRCAM_MIPS 279,15694
+#define I_IRCAM_NEXT 280,15726
+#define NINRS	282,15760
+static const unsigned int I_INRS[283,15776
+static int data_size=285,15897
+static int comment_start=286,16030
+static int base_detune 287,16163
+int mus_header_samples 289,16207
+int mus_header_data_location 290,16258
+int mus_header_chans 291,16319
+int mus_header_srate 292,16364
+int mus_header_type 293,16409
+int mus_header_format 294,16459
+int mus_header_distributed 295,16511
+int mus_header_comment_start 296,16575
+int mus_header_comment_end 297,16636
+int mus_header_aux_comment_start 298,16693
+int mus_header_aux_comment_end 299,16766
+int mus_header_type_specifier 300,16835
+int mus_header_bits_per_sample 301,16898
+int mus_header_fact_samples 302,16963
+int mus_header_block_align 303,17022
+int mus_header_true_length 304,17079
+int mus_header_original_format 305,17141
+int mus_header_loop_mode(306,17211
+int mus_header_loop_start(307,17276
+int mus_header_loop_end(308,17343
+int mus_header_mark_position(309,17406
+int mus_header_base_detune(310,17544
+int mus_header_base_note(311,17600
+int mus_data_format_to_bytes_per_sample 313,17653
+int mus_header_data_format_to_bytes_per_sample 339,18515
+int mus_samples_to_bytes 340,18629
+int mus_bytes_to_samples 341,18739
+void mus_header_snd_set_header 343,18857
+static int equal_big_or_little_endian(352,19072
+static short big_or_little_endian_short 357,19237
+static int big_or_little_endian_int 363,19397
+static float big_or_little_endian_float 369,19549
+static int match_four_chars(375,19709
+static void write_four_chars(382,19878
+char *mus_header_type_name(388,20010
+char *mus_data_format_name(456,23015
+static int read_next_header 515,25780
+int mus_header_write_next_header 555,27683
+static void update_next_header 609,29761
+static void update_next_header_comment 616,29923
+#define ULPOW2TO31	697,33479
+#define DPOW2TO31	698,33525
+static double myUlongToDouble(700,33578
+static unsigned int myDoubleToUlong(708,33737
+static double ieee_80_to_double(716,33924
+static void double_to_ieee_80(737,34662
+static int update_form_size,759,35452
+static int update_form_size, update_frames_location,759,35452
+static int update_form_size, update_frames_location, update_ssnd_location;759,35452
+static int seek_and_read(761,35528
+static int read_aiff_marker(772,35776
+static int read_aiff_header 782,36051
+int mus_header_aiff_p(978,43978
+static int *aiff_loop_info 980,44091
+void mus_header_set_aiff_loop_info(982,44127
+static int write_aif_header 988,44295
+static void update_aiff_header 1180,51788
+static void update_aiff_header_comment 1204,52978
+static int wave_to_sndlib_format(1291,58112
+static int read_riff_header 1315,58924
+static int write_riff_header 1412,62300
+static void update_riff_header 1513,65308
+static void update_riff_header_comment 1527,65759
+static int read_avi_header 1559,66999
+static int soundfont_entries 1665,70269
+static int *soundfont_starts 1666,70303
+static int soundfont_size 1667,70423
+static char **soundfont_names 1668,70454
+static void soundfont_entry(1670,70493
+int mus_header_sf2_entries(1710,72078
+char *mus_header_sf2_name(1711,72140
+int mus_header_sf2_start(1712,72203
+int mus_header_sf2_end(1713,72266
+int mus_header_sf2_loop_start(1714,72325
+int mus_header_sf2_loop_end(1715,72398
+static int read_soundfont_header 1717,72468
+#define MAX_FIELD_LENGTH 1852,77163
+static int decode_nist_value 1854,77192
+static int read_nist_header 1873,77851
+static int write_nist_header 1973,80898
+static void update_nist_header 1993,81586
+static int read_bicsf_header 2020,82466
+static int read_ircam_header 2095,85127
+static int write_ircam_header 2160,87277
+static void update_ircam_header 2218,88923
+static int read_8svx_header 2236,89288
+static int read_voc_header(2314,91967
+static int read_adc_header(2420,94991
+static int read_avr_header(2464,96903
+static int read_sndt_header(2530,98591
+static int read_covox_header(2551,99238
+static int read_spl_header(2578,99850
+static int read_smp_header(2604,100518
+static int read_sppack_header(2640,101706
+static int read_esps_header 2698,103727
+static int inrs_srates[2817,106871
+static int read_inrs_header 2819,106952
+static int read_maud_header 2851,107797
+static int read_csl_header 2935,110167
+static int read_file_samp_header 3006,112118
+static int read_sd1_header 3053,113516
+static int read_psion_header 3092,114450
+static int read_deskmate_header 3127,115778
+static int read_deskmate_2500_header 3162,116827
+static int read_gravis_header(3231,118599
+static int read_goldwave_header(3272,119575
+static int read_srfs_header(3292,120128
+static int read_qt_header(3311,120707
+static int read_sbstudio_header(3340,121516
+static int read_delusion_header(3404,122934
+static int read_farandole_header(3433,123633
+static int read_tx16_header(3466,124633
+static int read_sy85_header(3500,125625
+static int read_kurzweil_2000_header(3519,126150
+static int read_ultratracker_header(3546,127003
+static int read_sample_dump_header(3580,127853
+static int read_digiplayer_header(3639,129518
+static int read_adf_header(3679,130663
+static int read_diamondware_header(3729,132441
+static int read_paf_header 3761,133479
+static int read_comdisco_header 3816,135486
+static int read_asf_header 3901,137849
+static int header_raw_srate 4008,142088
+static int header_raw_chans 4009,142125
+static int header_raw_format 4010,142158
+static int read_no_header 4012,142202
+void mus_header_set_raw_defaults(4025,142525
+static int mus_resource(4040,142845
+int mus_header_read_with_fd 4066,143429
+int mus_header_read 4421,154837
+int mus_header_write_with_fd 4473,156175
+int mus_header_write 4503,157376
+int mus_header_update_with_fd(4513,157719
+int mus_header_update 4535,158344
+int mus_header_update_comment 4567,159097
+int mus_header_writable(4588,159729
+One supported sample type is the DVSM-Format of the programs WinRec,4756,164714
+	char magic[4761,164894
+	int headlen;4762,164927
+	int freq;4763,164969
+	char pack;4764,165019
+	char mode;4765,165068
+	long blocklen;4766,165144
+sam_freq[4771,165319
+Confusingly enough there also appears to be a DVMS header 4776,165548
+struct dvms_header dvms_header4777,165625
+#define DVMS_HEADER_LEN 4793,165978
+int decode_char 4948,172777
+from_base64(4958,173027
+void mus_header_set_aifc(5009,174986
+
+sound.c,2879
+  #define HAVE_VPRINTF 9,256
+#define SNDLIB_GDBM_FILENAME 56,1130
+#define SNDLIB_GDBM_MAX_CHANS 63,1512
+static datum our_key;64,1545
+static datum gdbm_key(65,1567
+static void gdbm_errmsg(72,1695
+static GDBM_FILE gdbmf 73,1768
+static GDBM_FILE gdbm_fd(74,1799
+static int mus_error_tag 83,1960
+int mus_error_make_tag(84,2010
+void mus_error_set_handler(86,2129
+static char *mus_error_buffer 87,2253
+void mus_error(89,2292
+void mus_fwrite(109,2755
+static time_t file_write_date(123,3025
+static int file_write_date(132,3220
+static int sndlib_initialized 135,3290
+int mus_sound_initialize(137,3326
+void mus_sound_finalize(152,3712
+int mus_sample_bits(159,3800
+} sound_file;sound_file181,4484
+static datum our_contents;183,4499
+static datum gdbm_contents(184,4526
+} sound_file;sound_file204,5233
+static int sound_table_size 206,5248
+static sound_file **sound_table 207,5281
+static void free_sound_file(211,5330
+static sound_file *add_to_sound_table(233,5961
+int mus_sound_forget(276,7080
+static sound_file *check_write_date(300,7453
+static sound_file *find_sound_file(331,8299
+static void display_sound_file_entry(354,8761
+void mus_sound_print_cache(416,10303
+static void fill_sf_record(453,11045
+static sound_file *read_sound_file_header_with_fd(505,12941
+static sound_file *read_sound_file_header_with_name(517,13225
+static sound_file *getsf(529,13480
+  #define FSF(FSF542,13783
+  #define FSF(FSF544,13818
+int mus_sound_samples 546,13844
+int mus_sound_frames 547,13984
+int mus_sound_datum_size 548,14135
+int mus_sound_data_location 549,14281
+int mus_sound_chans 550,14433
+int mus_sound_srate 551,14569
+int mus_sound_header_type 552,14705
+int mus_sound_data_format 553,14853
+int mus_sound_original_format 554,15001
+int mus_sound_comment_start 555,15163
+int mus_sound_comment_end 556,15315
+int mus_sound_length 557,15463
+int mus_sound_fact_samples 558,15611
+int mus_sound_distributed 559,15761
+int mus_sound_write_date 560,15916
+int mus_sound_type_specifier 561,16062
+int mus_sound_align 562,16216
+int mus_sound_bits_per_sample 563,16358
+float mus_sound_duration(564,16514
+int *mus_sound_loop_info(566,16627
+void mus_sound_set_loop_info(598,17230
+int mus_sound_aiff_p(634,18140
+char *mus_sound_comment(639,18234
+int mus_sound_open_input 668,18897
+int mus_sound_open_output 692,19494
+int mus_sound_reopen_output(709,20146
+int mus_sound_close_input 719,20478
+int mus_sound_close_output 724,20592
+int mus_sound_read 731,20797
+int mus_sound_write 736,20932
+int mus_sound_seek 741,21071
+int mus_sound_seek_frame(746,21175
+int mus_sound_override_header(751,21267
+int mus_sound_max_amp(778,22154
+int mus_file_to_array(859,24437
+int mus_array_to_file(876,25014
+#define NUM_SNDLIB_NAMES 895,25715
+static const char *sndlib_names[896,25744
+int sndlib_num_commands(937,28046
+const char **sndlib_commands(938,28104
+
+resample.c,180
+static char resampleVersion[6,64
+#define USAGE 14,390
+static int trace 36,916
+static char comment[38,975
+static void fail(40,1007
+static void fails(47,1185
+int main(56,1396
+
+warp.c,725
+#define MAXNWING 15,346
+#define MAXFACTOR 16,370
+#define IBUFFSIZE 18,392
+#define OBUFFSIZE 19,463
+static void fail(22,541
+static void fails(28,698
+FILE *fin,37,931
+FILE *fin, *fout;37,931
+static void openData(40,951
+static void closeData(51,1275
+static int readData(57,1355
+static void writeData(86,2298
+void check(93,2467
+double a,105,2726
+double a,b,105,2726
+double a,b,c,105,2726
+double a,b,c,d,105,2726
+double a,b,c,d,e,105,2726
+double a,b,c,d,e,f,105,2726
+double a,b,c,d,e,f,Total;105,2726
+int Acc;106,2752
+void initWarp(108,2762
+double warpFunction(128,3454
+static int SrcUD(143,3807
+static int localResample(180,5662
+static HWORD Imp[243,8625
+static HWORD ImpD[244,8687
+void main(246,8756
+
+windowfilter.c,112
+#define MAXNWING 8,122
+char NmultHelp[21,480
+char FrollHelp[34,1278
+char BetaHelp[45,1950
+int main(71,3232
+
+filterkit.c,720
+static void getstr(49,2039
+#define IzeroEPSILON 116,4095
+static double Izero(118,4173
+void LpFilter(136,4449
+int writeFilter(182,6168
+#define MAXNWING 217,7184
+static double ImpR[218,7208
+int makeFilter(220,7239
+int readFilter(296,9996
+WORD FilterUp(357,11408
+WORD FilterUD(408,13046
+static UHWORD LpScl,469,15318
+static UHWORD LpScl, Nmult,469,15318
+static UHWORD LpScl, Nmult, Nwing;469,15318
+static HWORD Imp[470,15353
+static HWORD ImpD[471,15381
+int initZerox(481,15633
+#define MAXITER 497,15927
+#define ZeroxEPSILON 498,15946
+#define ZeroxMAXERROR 499,15974
+double zerox(501,16003
+BOOL Query(552,17074
+char *GetString(570,17445
+double GetDouble(586,17740
+unsigned short GetUShort(608,18178
+
+resample.h,224
+#define Nhc 13,276
+#define Na 14,296
+#define Np 15,316
+#define Npc 16,342
+#define Amask 17,368
+#define Pmask 18,397
+#define Nh 19,426
+#define Nb 20,446
+#define Nhxn 21,466
+#define Nhg 22,486
+#define NLpScl 23,513
+
+filterkit.h,38
+#define GetUHWORD(GetUHWORD158,6372
+
+stdefs.h,549
+#define _STDEFS_H3,33
+#define TRUE 6,65
+#define FALSE 10,103
+#define PI 14,138
+#define PI2 18,194
+#define D2R 21,239
+#define R2D 22,293
+#define MAX(MAX25,360
+#define MIN(MIN28,415
+#define ABS(ABS32,471
+#define SGN(SGN36,530
+typedef char           BOOL;BOOL39,588
+typedef short          HWORD;HWORD40,617
+typedef unsigned short UHWORD;UHWORD41,647
+typedef int            WORD;WORD42,678
+typedef unsigned int   UWORD;UWORD43,707
+#define MAX_HWORD 45,738
+#define MIN_HWORD 46,764
+#define INLINE49,805
+#define INLINE 51,832
+
+smallfilter.h,179
+#define SMALL_FILTER_NMULT 2,33
+#define SMALL_FILTER_SCALE 3,72
+#define SMALL_FILTER_NWING 4,135
+static HWORD SMALL_FILTER_IMP[5,193
+static HWORD SMALL_FILTER_IMPD[1544,8852
+
+largefilter.h,187
+#define LARGE_FILTER_NMULT 22,880
+#define LARGE_FILTER_SCALE 23,919
+#define LARGE_FILTER_NWING 24,982
+static HWORD LARGE_FILTER_IMP[25,1040
+static HWORD LARGE_FILTER_IMPD[8219,41592
+
+sndlibextra.h,216
+#define IS_FLOAT_FORMAT(IS_FLOAT_FORMAT29,789
+#define NOT_A_SOUND_FILE(NOT_A_SOUND_FILE33,967
+#define WRITEABLE_HEADER_TYPE(WRITEABLE_HEADER_TYPE38,1195
+#define INVALID_DATA_FORMAT(INVALID_DATA_FORMAT44,1463
+
+sndlib.h,17267
+#define SNDLIB_H2,17
+#    define __CYGWIN32__7,160
+# define __BEGIN_DECLS 14,261
+# define __END_DECLS 15,297
+# define __BEGIN_DECLS 17,326
+# define __END_DECLS 18,361
+# define PROTO(PROTO23,554
+# define PROTO(PROTO25,590
+#define SNDLIB_VERSION 29,625
+#define SNDLIB_REVISION 30,651
+#define SNDLIB_DATE 31,678
+  #define HAVE_SNDLIB 34,731
+     #define MUS_LITTLE_ENDIAN 43,1056
+     #define LONG_INT_P 46,1133
+     #define LONG_INT_P 48,1168
+     #define LONG_INT_P 52,1252
+     #define LONG_INT_P 54,1287
+  #define RETSIGTYPE 56,1322
+    #define MUS_LITTLE_ENDIAN 59,1403
+        #define MUS_LITTLE_ENDIAN 65,1700
+          #define MUS_LITTLE_ENDIAN 68,1770
+    #define __FUNCTION__ 77,1904
+  #define MUS_LITTLE_ENDIAN 82,2010
+  #define MACOS 86,2134
+    #define BEOS 94,2575
+        #define BEOS 99,2699
+          #define MACOS 102,2770
+        #define MACOS 107,2854
+          #define WINDOZE 110,2956
+          #define MUS_LITTLE_ENDIAN 111,2984
+            #define ALPHA 114,3063
+            #define MUS_LITTLE_ENDIAN 115,3091
+    #define HAVE_OSS 130,3737
+    #define HAVE_OSS 132,3768
+  #define HAVE_OSS 136,3895
+#define TWO_PI 146,3978
+  #define SEEK_SET 149,4022
+  #define SEEK_CUR 153,4068
+  #define SEEK_END 157,4114
+  #define MUS_SAMPLE_TYPE 161,4168
+    #define MUS_SAMPLE_BITS 163,4224
+  #define MUS_SAMPLE_0 165,4264
+  #define MUS_BYTE_TO_SAMPLE(MUS_BYTE_TO_SAMPLE166,4289
+  #define MUS_SAMPLE_TO_BYTE(MUS_SAMPLE_TO_BYTE167,4352
+  #define MUS_SHORT_TO_SAMPLE(MUS_SHORT_TO_SAMPLE168,4415
+  #define MUS_SAMPLE_TO_SHORT(MUS_SAMPLE_TO_SHORT169,4480
+    #define MUS_INT24_TO_SAMPLE(MUS_INT24_TO_SAMPLE171,4574
+    #define MUS_SAMPLE_TO_INT24(MUS_SAMPLE_TO_INT24172,4641
+    #define MUS_INT24_TO_SAMPLE(MUS_INT24_TO_SAMPLE174,4716
+    #define MUS_SAMPLE_TO_INT24(MUS_SAMPLE_TO_INT24175,4783
+  #define MUS_INT_TO_SAMPLE(MUS_INT_TO_SAMPLE177,4859
+  #define MUS_SAMPLE_TO_INT(MUS_SAMPLE_TO_INT178,4894
+  #define MUS_FLOAT_TO_FIX 179,4929
+  #define MUS_FIX_TO_FLOAT 180,4985
+  #define MUS_FLOAT_TO_SAMPLE(MUS_FLOAT_TO_SAMPLE181,5046
+  #define MUS_SAMPLE_TO_FLOAT(MUS_SAMPLE_TO_FLOAT182,5111
+  #define MUS_DOUBLE_TO_SAMPLE(MUS_DOUBLE_TO_SAMPLE183,5178
+  #define MUS_SAMPLE_TO_DOUBLE(MUS_SAMPLE_TO_DOUBLE184,5244
+  #define MUS_SAMPLE_MAX 185,5313
+  #define MUS_SAMPLE_MIN 186,5361
+  #define MUS_MIX_MAX 187,5408
+  #define MUS_MIX_MIN 188,5440
+  #define MUS_SAMPLE_TYPE 191,5571
+    #define MUS_SAMPLE_BITS 193,5629
+  #define MUS_SAMPLE_0 195,5669
+  #define MUS_BYTE_TO_SAMPLE(MUS_BYTE_TO_SAMPLE196,5696
+  #define MUS_SHORT_TO_SAMPLE(MUS_SHORT_TO_SAMPLE197,5759
+  #define MUS_INT_TO_SAMPLE(MUS_INT_TO_SAMPLE198,5824
+  #define MUS_INT24_TO_SAMPLE(MUS_INT24_TO_SAMPLE199,5904
+  #define MUS_FLOAT_TO_FIX 200,5969
+  #define MUS_FIX_TO_FLOAT 201,6000
+  #define MUS_FLOAT_TO_SAMPLE(MUS_FLOAT_TO_SAMPLE202,6031
+  #define MUS_DOUBLE_TO_SAMPLE(MUS_DOUBLE_TO_SAMPLE203,6068
+  #define MUS_SAMPLE_TO_FLOAT(MUS_SAMPLE_TO_FLOAT204,6106
+  #define MUS_SAMPLE_TO_DOUBLE(MUS_SAMPLE_TO_DOUBLE205,6143
+  #define MUS_SAMPLE_TO_INT(MUS_SAMPLE_TO_INT206,6181
+  #define MUS_SAMPLE_TO_INT24(MUS_SAMPLE_TO_INT24207,6254
+  #define MUS_SAMPLE_TO_SHORT(MUS_SAMPLE_TO_SHORT208,6312
+  #define MUS_SAMPLE_TO_BYTE(MUS_SAMPLE_TO_BYTE209,6372
+  #define MUS_SAMPLE_MAX 210,6429
+  #define MUS_SAMPLE_MIN 211,6462
+  #define MUS_MIX_MAX 212,6494
+  #define MUS_MIX_MIN 213,6522
+#define MUS_DAC_CHANNEL 216,6561
+#define MUS_DAC_REVERB 217,6592
+#define MUS_UNSUPPORTED 219,6623
+enum {MUS_NEXT,220,6650
+enum {MUS_NEXT,MUS_AIFC,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,MUS_ESPS,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,MUS_ESPS,MUS_SVX,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,MUS_ESPS,MUS_SVX,MUS_VOC,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,MUS_ESPS,MUS_SVX,MUS_VOC,MUS_SNDT,220,6650
+enum {MUS_NEXT,MUS_AIFC,MUS_RIFF,MUS_BICSF,MUS_NIST,MUS_INRS,MUS_ESPS,MUS_SVX,MUS_VOC,MUS_SNDT,MUS_RAW,220,6650
+      MUS_SMP,221,6754
+      MUS_SMP,MUS_SD2,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,MUS_SPPACK,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,MUS_SPPACK,MUS_MUS10,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,MUS_SPPACK,MUS_MUS10,MUS_HCOM,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,MUS_SPPACK,MUS_MUS10,MUS_HCOM,MUS_PSION,221,6754
+      MUS_SMP,MUS_SD2,MUS_AVR,MUS_IRCAM,MUS_SD1,MUS_SPPACK,MUS_MUS10,MUS_HCOM,MUS_PSION,MUS_MAUD,221,6754
+      MUS_IEEE,222,6852
+      MUS_IEEE,MUS_DESKMATE,222,6852
+      MUS_IEEE,MUS_DESKMATE,MUS_DESKMATE_2500,222,6852
+      MUS_IEEE,MUS_DESKMATE,MUS_DESKMATE_2500,MUS_MATLAB,222,6852
+      MUS_IEEE,MUS_DESKMATE,MUS_DESKMATE_2500,MUS_MATLAB,MUS_ADC,222,6852
+      MUS_IEEE,MUS_DESKMATE,MUS_DESKMATE_2500,MUS_MATLAB,MUS_ADC,MUS_SOUND_EDIT,222,6852
+      MUS_IEEE,MUS_DESKMATE,MUS_DESKMATE_2500,MUS_MATLAB,MUS_ADC,MUS_SOUND_EDIT,MUS_SOUND_EDIT_16,222,6852
+      MUS_DVSM,223,6951
+      MUS_DVSM,MUS_MIDI,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,MUS_SOUNDFONT,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,MUS_SOUNDFONT,MUS_GRAVIS,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,MUS_SOUNDFONT,MUS_GRAVIS,MUS_COMDISCO,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,MUS_SOUNDFONT,MUS_GRAVIS,MUS_COMDISCO,MUS_GOLDWAVE,223,6951
+      MUS_DVSM,MUS_MIDI,MUS_ESIGNAL,MUS_SOUNDFONT,MUS_GRAVIS,MUS_COMDISCO,MUS_GOLDWAVE,MUS_SRFS,223,6951
+      MUS_MIDI_SAMPLE_DUMP,224,7048
+      MUS_MIDI_SAMPLE_DUMP,MUS_DIAMONDWARE,224,7048
+      MUS_MIDI_SAMPLE_DUMP,MUS_DIAMONDWARE,MUS_REALAUDIO,224,7048
+      MUS_MIDI_SAMPLE_DUMP,MUS_DIAMONDWARE,MUS_REALAUDIO,MUS_ADF,224,7048
+      MUS_MIDI_SAMPLE_DUMP,MUS_DIAMONDWARE,MUS_REALAUDIO,MUS_ADF,MUS_SBSTUDIOII,224,7048
+      MUS_MIDI_SAMPLE_DUMP,MUS_DIAMONDWARE,MUS_REALAUDIO,MUS_ADF,MUS_SBSTUDIOII,MUS_DELUSION,224,7048
+      MUS_FARANDOLE,225,7142
+      MUS_FARANDOLE,MUS_SAMPLE_DUMP,225,7142
+      MUS_FARANDOLE,MUS_SAMPLE_DUMP,MUS_ULTRATRACKER,225,7142
+      MUS_FARANDOLE,MUS_SAMPLE_DUMP,MUS_ULTRATRACKER,MUS_YAMAHA_SY85,225,7142
+      MUS_FARANDOLE,MUS_SAMPLE_DUMP,MUS_ULTRATRACKER,MUS_YAMAHA_SY85,MUS_YAMAHA_TX16,225,7142
+      MUS_FARANDOLE,MUS_SAMPLE_DUMP,MUS_ULTRATRACKER,MUS_YAMAHA_SY85,MUS_YAMAHA_TX16,MUS_DIGIPLAYER,225,7142
+      MUS_COVOX,226,7243
+      MUS_COVOX,MUS_SPL,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,MUS_OMF,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,MUS_OMF,MUS_QUICKTIME,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,MUS_OMF,MUS_QUICKTIME,MUS_ASF,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,MUS_OMF,MUS_QUICKTIME,MUS_ASF,MUS_YAMAHA_SY99,226,7243
+      MUS_COVOX,MUS_SPL,MUS_AVI,MUS_OMF,MUS_QUICKTIME,MUS_ASF,MUS_YAMAHA_SY99,MUS_KURZWEIL_2000,226,7243
+      MUS_AIFF,227,7340
+      MUS_AIFF,MUS_PAF,227,7340
+      MUS_AIFF,MUS_PAF,MUS_CSL,227,7340
+      MUS_AIFF,MUS_PAF,MUS_CSL,MUS_FILE_SAMP}227,7340
+#define MUS_HEADER_TYPE_OK(MUS_HEADER_TYPE_OK229,7388
+enum {MUS_UNKNOWN,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,MUS_BFLOAT,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,MUS_BFLOAT,MUS_BINT,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,MUS_BFLOAT,MUS_BINT,MUS_ALAW,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,MUS_BFLOAT,MUS_BINT,MUS_ALAW,MUS_UBYTE,231,7471
+enum {MUS_UNKNOWN,MUS_BSHORT,MUS_MULAW,MUS_BYTE,MUS_BFLOAT,MUS_BINT,MUS_ALAW,MUS_UBYTE,MUS_B24INT,231,7471
+      MUS_BDOUBLE,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,MUS_LFLOAT,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,MUS_LFLOAT,MUS_LDOUBLE,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,MUS_LFLOAT,MUS_LDOUBLE,MUS_UBSHORT,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,MUS_LFLOAT,MUS_LDOUBLE,MUS_UBSHORT,MUS_ULSHORT,232,7570
+      MUS_BDOUBLE,MUS_LSHORT,MUS_LINT,MUS_LFLOAT,MUS_LDOUBLE,MUS_UBSHORT,MUS_ULSHORT,MUS_L24INT,232,7570
+      MUS_BINTN,233,7667
+      MUS_BINTN,MUS_LINTN,233,7667
+      MUS_BINTN,MUS_LINTN,MUS_L12INT}233,7667
+#define MUS_DATA_FORMAT_OK(MUS_DATA_FORMAT_OK237,7818
+  #define MUS_COMPATIBLE_FORMAT 240,7919
+  #define MUS_COMPATIBLE_FORMAT 242,7968
+    #define MUS_OUT_FORMAT 247,8068
+    #define MUS_OUT_FORMAT 249,8114
+    #define MUS_OUT_FORMAT 253,8189
+    #define MUS_OUT_FORMAT 255,8235
+#define MUS_NIST_SHORTPACK 260,8289
+#define MUS_AIFF_IMA_ADPCM 261,8318
+enum {MUS_AUDIO_NO_ERROR,263,8349
+enum {MUS_AUDIO_NO_ERROR,MUS_AUDIO_CHANNELS_NOT_AVAILABLE,263,8349
+enum {MUS_AUDIO_NO_ERROR,MUS_AUDIO_CHANNELS_NOT_AVAILABLE,MUS_AUDIO_SRATE_NOT_AVAILABLE,263,8349
+enum {MUS_AUDIO_NO_ERROR,MUS_AUDIO_CHANNELS_NOT_AVAILABLE,MUS_AUDIO_SRATE_NOT_AVAILABLE,MUS_AUDIO_FORMAT_NOT_AVAILABLE,263,8349
+      MUS_AUDIO_NO_INPUT_AVAILABLE,264,8469
+      MUS_AUDIO_NO_INPUT_AVAILABLE,MUS_AUDIO_NO_OUTPUT_AVAILABLE,264,8469
+      MUS_AUDIO_NO_INPUT_AVAILABLE,MUS_AUDIO_NO_OUTPUT_AVAILABLE,MUS_AUDIO_INPUT_BUSY,264,8469
+      MUS_AUDIO_NO_INPUT_AVAILABLE,MUS_AUDIO_NO_OUTPUT_AVAILABLE,MUS_AUDIO_INPUT_BUSY,MUS_AUDIO_OUTPUT_BUSY,264,8469
+      MUS_AUDIO_CONFIGURATION_NOT_AVAILABLE,265,8578
+      MUS_AUDIO_CONFIGURATION_NOT_AVAILABLE,MUS_AUDIO_INPUT_CLOSED,265,8578
+      MUS_AUDIO_CONFIGURATION_NOT_AVAILABLE,MUS_AUDIO_INPUT_CLOSED,MUS_AUDIO_OUTPUT_CLOSED,265,8578
+      MUS_AUDIO_CONFIGURATION_NOT_AVAILABLE,MUS_AUDIO_INPUT_CLOSED,MUS_AUDIO_OUTPUT_CLOSED,MUS_AUDIO_IO_INTERRUPTED,265,8578
+      MUS_AUDIO_NO_LINES_AVAILABLE,266,8695
+      MUS_AUDIO_NO_LINES_AVAILABLE,MUS_AUDIO_WRITE_ERROR,266,8695
+      MUS_AUDIO_NO_LINES_AVAILABLE,MUS_AUDIO_WRITE_ERROR,MUS_AUDIO_SIZE_NOT_AVAILABLE,266,8695
+      MUS_AUDIO_NO_LINES_AVAILABLE,MUS_AUDIO_WRITE_ERROR,MUS_AUDIO_SIZE_NOT_AVAILABLE,MUS_AUDIO_DEVICE_NOT_AVAILABLE,266,8695
+      MUS_AUDIO_CANT_CLOSE,267,8813
+      MUS_AUDIO_CANT_CLOSE,MUS_AUDIO_CANT_OPEN,267,8813
+      MUS_AUDIO_CANT_CLOSE,MUS_AUDIO_CANT_OPEN,MUS_AUDIO_READ_ERROR,267,8813
+      MUS_AUDIO_CANT_CLOSE,MUS_AUDIO_CANT_OPEN,MUS_AUDIO_READ_ERROR,MUS_AUDIO_AMP_NOT_AVAILABLE,267,8813
+      MUS_AUDIO_CANT_CLOSE,MUS_AUDIO_CANT_OPEN,MUS_AUDIO_READ_ERROR,MUS_AUDIO_AMP_NOT_AVAILABLE,MUS_AUDIO_NO_OP,267,8813
+      MUS_AUDIO_CANT_WRITE,268,8926
+      MUS_AUDIO_CANT_WRITE,MUS_AUDIO_CANT_READ,268,8926
+      MUS_AUDIO_CANT_WRITE,MUS_AUDIO_CANT_READ,MUS_AUDIO_NO_READ_PERMISSION}268,8926
+#define MUS_AUDIO_PACK_SYSTEM(MUS_AUDIO_PACK_SYSTEM270,9005
+#define MUS_AUDIO_SYSTEM(MUS_AUDIO_SYSTEM271,9048
+#define MUS_AUDIO_DEVICE(MUS_AUDIO_DEVICE272,9095
+enum {MUS_AUDIO_DEFAULT,274,9137
+enum {MUS_AUDIO_DEFAULT,MUS_AUDIO_DUPLEX_DEFAULT,274,9137
+enum {MUS_AUDIO_DEFAULT,MUS_AUDIO_DUPLEX_DEFAULT,MUS_AUDIO_ADAT_IN,274,9137
+enum {MUS_AUDIO_DEFAULT,MUS_AUDIO_DUPLEX_DEFAULT,MUS_AUDIO_ADAT_IN,MUS_AUDIO_AES_IN,274,9137
+enum {MUS_AUDIO_DEFAULT,MUS_AUDIO_DUPLEX_DEFAULT,MUS_AUDIO_ADAT_IN,MUS_AUDIO_AES_IN,MUS_AUDIO_LINE_OUT,274,9137
+      MUS_AUDIO_LINE_IN,275,9241
+      MUS_AUDIO_LINE_IN,MUS_AUDIO_MICROPHONE,275,9241
+      MUS_AUDIO_LINE_IN,MUS_AUDIO_MICROPHONE,MUS_AUDIO_SPEAKERS,275,9241
+      MUS_AUDIO_LINE_IN,MUS_AUDIO_MICROPHONE,MUS_AUDIO_SPEAKERS,MUS_AUDIO_DIGITAL_IN,275,9241
+      MUS_AUDIO_LINE_IN,MUS_AUDIO_MICROPHONE,MUS_AUDIO_SPEAKERS,MUS_AUDIO_DIGITAL_IN,MUS_AUDIO_DIGITAL_OUT,275,9241
+      MUS_AUDIO_DAC_OUT,276,9349
+      MUS_AUDIO_DAC_OUT,MUS_AUDIO_ADAT_OUT,276,9349
+      MUS_AUDIO_DAC_OUT,MUS_AUDIO_ADAT_OUT,MUS_AUDIO_AES_OUT,276,9349
+      MUS_AUDIO_DAC_OUT,MUS_AUDIO_ADAT_OUT,MUS_AUDIO_AES_OUT,MUS_AUDIO_DAC_FILTER,276,9349
+      MUS_AUDIO_DAC_OUT,MUS_AUDIO_ADAT_OUT,MUS_AUDIO_AES_OUT,MUS_AUDIO_DAC_FILTER,MUS_AUDIO_MIXER,276,9349
+      MUS_AUDIO_LINE1,277,9448
+      MUS_AUDIO_LINE1,MUS_AUDIO_LINE2,277,9448
+      MUS_AUDIO_LINE1,MUS_AUDIO_LINE2,MUS_AUDIO_LINE3,277,9448
+      MUS_AUDIO_LINE1,MUS_AUDIO_LINE2,MUS_AUDIO_LINE3,MUS_AUDIO_AUX_INPUT,277,9448
+      MUS_AUDIO_LINE1,MUS_AUDIO_LINE2,MUS_AUDIO_LINE3,MUS_AUDIO_AUX_INPUT,MUS_AUDIO_CD,277,9448
+      MUS_AUDIO_AUX_OUTPUT,278,9536
+      MUS_AUDIO_AUX_OUTPUT,MUS_AUDIO_SPDIF_IN,278,9536
+      MUS_AUDIO_AUX_OUTPUT,MUS_AUDIO_SPDIF_IN,MUS_AUDIO_SPDIF_OUT,278,9536
+      MUS_AUDIO_AUX_OUTPUT,MUS_AUDIO_SPDIF_IN,MUS_AUDIO_SPDIF_OUT,MUS_AUDIO_AMP,278,9536
+      MUS_AUDIO_AUX_OUTPUT,MUS_AUDIO_SPDIF_IN,MUS_AUDIO_SPDIF_OUT,MUS_AUDIO_AMP,MUS_AUDIO_SRATE,278,9536
+      MUS_AUDIO_CHANNEL,279,9633
+      MUS_AUDIO_CHANNEL,MUS_AUDIO_FORMAT,279,9633
+      MUS_AUDIO_CHANNEL,MUS_AUDIO_FORMAT,MUS_AUDIO_IMIX,279,9633
+      MUS_AUDIO_CHANNEL,MUS_AUDIO_FORMAT,MUS_AUDIO_IMIX,MUS_AUDIO_IGAIN,279,9633
+      MUS_AUDIO_CHANNEL,MUS_AUDIO_FORMAT,MUS_AUDIO_IMIX,MUS_AUDIO_IGAIN,MUS_AUDIO_RECLEV,279,9633
+      MUS_AUDIO_PCM,280,9723
+      MUS_AUDIO_PCM,MUS_AUDIO_PCM2,280,9723
+      MUS_AUDIO_PCM,MUS_AUDIO_PCM2,MUS_AUDIO_OGAIN,280,9723
+      MUS_AUDIO_PCM,MUS_AUDIO_PCM2,MUS_AUDIO_OGAIN,MUS_AUDIO_LINE,280,9723
+      MUS_AUDIO_PCM,MUS_AUDIO_PCM2,MUS_AUDIO_OGAIN,MUS_AUDIO_LINE,MUS_AUDIO_SYNTH,280,9723
+      MUS_AUDIO_BASS,281,9806
+      MUS_AUDIO_BASS,MUS_AUDIO_TREBLE,281,9806
+      MUS_AUDIO_BASS,MUS_AUDIO_TREBLE,MUS_AUDIO_PORT,281,9806
+      MUS_AUDIO_BASS,MUS_AUDIO_TREBLE,MUS_AUDIO_PORT,MUS_AUDIO_SAMPLES_PER_CHANNEL,281,9806
+      MUS_AUDIO_DIRECTION282,9890
+#define MUS_AUDIO_DEVICE_OK(MUS_AUDIO_DEVICE_OK285,9920
+enum {MUS_NO_ERROR,287,10013
+enum {MUS_NO_ERROR,MUS_NO_FREQUENCY,287,10013
+enum {MUS_NO_ERROR,MUS_NO_FREQUENCY,MUS_NO_PHASE,287,10013
+enum {MUS_NO_ERROR,MUS_NO_FREQUENCY,MUS_NO_PHASE,MUS_NO_GEN,287,10013
+enum {MUS_NO_ERROR,MUS_NO_FREQUENCY,MUS_NO_PHASE,MUS_NO_GEN,MUS_NO_LENGTH,287,10013
+      MUS_NO_FREE,288,10088
+      MUS_NO_FREE,MUS_NO_DESCRIBE,288,10088
+      MUS_NO_FREE,MUS_NO_DESCRIBE,MUS_NO_EQUALP,288,10088
+      MUS_NO_FREE,MUS_NO_DESCRIBE,MUS_NO_EQUALP,MUS_NO_DATA,288,10088
+      MUS_NO_FREE,MUS_NO_DESCRIBE,MUS_NO_EQUALP,MUS_NO_DATA,MUS_NO_SCALER,288,10088
+      MUS_MEMORY_ALLOCATION_FAILED,289,10163
+      MUS_MEMORY_ALLOCATION_FAILED,MUS_UNSTABLE_TWO_POLE_ERROR,289,10163
+      MUS_INVALID_CHANNEL_FOR_FRAME,290,10227
+      MUS_INVALID_CHANNEL_FOR_FRAME,MUS_CANT_OPEN_FILE,290,10227
+      MUS_INVALID_CHANNEL_FOR_FRAME,MUS_CANT_OPEN_FILE,MUS_NO_SAMPLE_INPUT,290,10227
+      MUS_NO_SAMPLE_OUTPUT,291,10303
+      MUS_NO_SAMPLE_OUTPUT,MUS_NO_FRAME_INPUT,291,10303
+      MUS_NO_SAMPLE_OUTPUT,MUS_NO_FRAME_INPUT,MUS_NO_FRAME_OUTPUT,291,10303
+      MUS_NO_SUCH_CHANNEL,292,10370
+      MUS_NO_SUCH_CHANNEL,MUS_NO_FILE_NAME_PROVIDED,292,10370
+      MUS_NO_SUCH_CHANNEL,MUS_NO_FILE_NAME_PROVIDED,MUS_NO_LOCATION,292,10370
+      MUS_NO_SUCH_CHANNEL,MUS_NO_FILE_NAME_PROVIDED,MUS_NO_LOCATION,MUS_NO_CHANNEL,292,10370
+      MUS_NO_SUCH_FFT_WINDOW,293,10454
+      MUS_NO_SUCH_FFT_WINDOW,MUS_UNSUPPORTED_DATA_FORMAT,293,10454
+      MUS_NO_SUCH_FFT_WINDOW,MUS_UNSUPPORTED_DATA_FORMAT,MUS_HEADER_READ_FAILED,293,10454
+      MUS_HEADER_TOO_MANY_AUXILIARY_COMMENTS,294,10535
+      MUS_HEADER_TOO_MANY_AUXILIARY_COMMENTS,MUS_UNSUPPORTED_HEADER_TYPE,294,10535
+      MUS_FILE_DESCRIPTORS_NOT_INITIALIZED,295,10609
+      MUS_FILE_DESCRIPTORS_NOT_INITIALIZED,MUS_NOT_A_SOUND_FILE,295,10609
+      MUS_FILE_DESCRIPTORS_NOT_INITIALIZED,MUS_NOT_A_SOUND_FILE,MUS_FILE_CLOSED,295,10609
+      MUS_FILE_DESCRIPTORS_NOT_INITIALIZED,MUS_NOT_A_SOUND_FILE,MUS_FILE_CLOSED,MUS_WRITE_ERROR,295,10609
+      MUS_BOGUS_FREE,296,10706
+      MUS_BOGUS_FREE,MUS_BUFFER_OVERFLOW,296,10706
+      MUS_BOGUS_FREE,MUS_BUFFER_OVERFLOW,MUS_BUFFER_UNDERFLOW,296,10706
+      MUS_BOGUS_FREE,MUS_BUFFER_OVERFLOW,MUS_BUFFER_UNDERFLOW,MUS_FILE_OVERFLOW,296,10706
+      MUS_BOGUS_FREE,MUS_BUFFER_OVERFLOW,MUS_BUFFER_UNDERFLOW,MUS_FILE_OVERFLOW,MUS_EXPONENT_OVERFLOW,296,10706
+      MUS_INITIAL_ERROR_TAG}297,10809
+  #define CALLOC(CALLOC303,11127
+  #define MALLOC(MALLOC304,11173
+  #define FREE(FREE305,11208
+    #define CALLOC(CALLOC308,11280
+    #define MALLOC(MALLOC309,11352
+    #define FREE(FREE310,11422
+    #define REALLOC(REALLOC311,11490
+    #define CALLOC(CALLOC313,11571
+    #define MALLOC(MALLOC314,11608
+    #define FREE(FREE315,11643
+    #define REALLOC(REALLOC316,11676
+#define MUS_MAX_FILE_NAME 320,11732
+  void mus_error(327,11827
+  #define ALSA_API 386,15257
+  #define OSS_API 387,15278
+  #define MUS_SAMPLE_ARRAY(MUS_SAMPLE_ARRAY494,21214
+  #define MUS_MAKE_SAMPLE_ARRAY(MUS_MAKE_SAMPLE_ARRAY495,21268
+  #define MUS_FREE_SAMPLE_ARRAY(MUS_FREE_SAMPLE_ARRAY496,21379
+  #define MUS_SAMPLE_ARRAY(MUS_SAMPLE_ARRAY498,21445
+  #define MUS_MAKE_SAMPLE_ARRAY(MUS_MAKE_SAMPLE_ARRAY499,21500
+  #define MUS_FREE_SAMPLE_ARRAY(MUS_FREE_SAMPLE_ARRAY500,21598
+
+sndlib-strings.h,4181
+#define SNDLIB_STRINGS_H2,25
+#define S_make_sound_data 4,51
+#define S_sound_data_ref 5,109
+#define S_sound_data_setB 6,166
+#define S_sound_data_p 7,224
+#define S_sound_data_length 8,278
+#define S_sound_data_chans 9,338
+#define S_sound_data2vct 10,397
+#define S_vct2sound_data 11,455
+#define S_mus_next 13,514
+#define S_mus_aifc 14,565
+#define S_mus_riff 15,616
+#define S_mus_nist 16,667
+#define S_mus_raw 17,718
+#define S_mus_ircam 18,768
+#define S_mus_aiff 19,820
+#define S_mus_bshort 20,871
+#define S_mus_lshort 21,924
+#define S_mus_mulaw 22,977
+#define S_mus_alaw 23,1029
+#define S_mus_byte 24,1080
+#define S_mus_ubyte 25,1131
+#define S_mus_bfloat 26,1183
+#define S_mus_lfloat 27,1236
+#define S_mus_bint 28,1289
+#define S_mus_lint 29,1340
+#define S_mus_bintn 30,1391
+#define S_mus_lintn 31,1443
+#define S_mus_b24int 32,1495
+#define S_mus_l24int 33,1548
+#define S_mus_bdouble 34,1601
+#define S_mus_ldouble 35,1655
+#define S_mus_ubshort 36,1709
+#define S_mus_ulshort 37,1763
+#define S_mus_audio_default 38,1817
+#define S_mus_audio_duplex_default 39,1877
+#define S_mus_audio_line_out 40,1944
+#define S_mus_audio_line_in 41,2005
+#define S_mus_audio_microphone 42,2065
+#define S_mus_audio_speakers 43,2128
+#define S_mus_audio_dac_out 44,2189
+#define S_mus_audio_adat_in 45,2249
+#define S_mus_audio_aes_in 46,2309
+#define S_mus_audio_digital_in 47,2368
+#define S_mus_audio_digital_out 48,2431
+#define S_mus_audio_adat_out 49,2495
+#define S_mus_audio_aes_out 50,2556
+#define S_mus_audio_dac_filter 51,2616
+#define S_mus_audio_mixer 52,2679
+#define S_mus_audio_line1 53,2737
+#define S_mus_audio_line2 54,2795
+#define S_mus_audio_line3 55,2853
+#define S_mus_audio_aux_input 56,2911
+#define S_mus_audio_cd 57,2973
+#define S_mus_audio_aux_output 58,3028
+#define S_mus_audio_spdif_in 59,3091
+#define S_mus_audio_spdif_out 60,3152
+#define S_mus_audio_amp 61,3214
+#define S_mus_audio_srate 62,3270
+#define S_mus_audio_channel 63,3328
+#define S_mus_audio_format 64,3388
+#define S_mus_audio_port 65,3447
+#define S_mus_audio_imix 66,3504
+#define S_mus_audio_igain 67,3561
+#define S_mus_audio_reclev 68,3619
+#define S_mus_audio_pcm 69,3678
+#define S_mus_audio_pcm2 70,3734
+#define S_mus_audio_ogain 71,3791
+#define S_mus_audio_line 72,3849
+#define S_mus_audio_synth 73,3906
+#define S_mus_audio_bass 74,3964
+#define S_mus_audio_treble 75,4021
+#define S_mus_audio_direction 76,4080
+#define S_mus_audio_samples_per_channel 77,4142
+#define S_mus_sound_samples 79,4215
+#define S_mus_sound_frames 80,4275
+#define S_mus_sound_duration 81,4334
+#define S_mus_sound_datum_size 82,4395
+#define S_mus_sound_data_location 83,4458
+#define S_mus_sound_chans 84,4524
+#define S_mus_sound_srate 85,4582
+#define S_mus_sound_header_type 86,4640
+#define S_mus_sound_data_format 87,4704
+#define S_mus_sound_length 88,4768
+#define S_mus_sound_type_specifier 89,4827
+#define S_mus_header_type_name 90,4894
+#define S_mus_data_format_name 91,4957
+#define S_mus_sound_comment 92,5020
+#define S_mus_data_format_bytes_per_sample 93,5080
+#define S_mus_sound_loop_info 94,5158
+#define S_mus_audio_error 95,5220
+#define S_mus_audio_error_name 96,5278
+#define S_mus_audio_report 97,5341
+#define S_mus_audio_sun_outputs 98,5400
+#define S_mus_sound_max_amp 99,5464
+#define S_mus_sound_open_input 101,5525
+#define S_mus_sound_open_output 102,5588
+#define S_mus_sound_reopen_output 103,5652
+#define S_mus_sound_close_input 104,5718
+#define S_mus_sound_close_output 105,5782
+#define S_mus_sound_read 106,5847
+#define S_mus_sound_write 107,5904
+#define S_mus_sound_seek 108,5962
+#define S_mus_sound_seek_frame 109,6019
+#define S_mus_audio_open_output 111,6083
+#define S_mus_audio_open_input 112,6147
+#define S_mus_audio_close 113,6210
+#define S_mus_audio_save 114,6268
+#define S_mus_audio_restore 115,6325
+#define S_mus_audio_systems 116,6385
+#define S_mus_audio_write 117,6445
+#define S_mus_audio_read 118,6503
+#define S_mus_audio_mixer_read 119,6560
+#define S_mus_audio_mixer_write 120,6623
+#define S_mus_file_set_data_clipped 122,6688
+#define S_mus_file_prescaler 123,6756
+#define S_mus_file_set_prescaler 124,6817

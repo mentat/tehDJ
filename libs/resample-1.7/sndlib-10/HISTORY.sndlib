@@ -1,0 +1,75 @@
+sndlib change log
+
+20-June:   change to scm_make_smob_type rather than *_mfpe.
+14-June:   ALSA 0.60 updates thanks to Paul Barton-Davis.
+8-June:    Linux OSS/ALSA choice now made at run-time (thanks to Fernando!).
+17-May:    removed vax float support.
+12-May:    removed 'old' names -- use old-sndlib2scm.scm and old-sndlib.h
+           mus_prescaler overflow bugfix.
+           added sg.h
+8-May:     added "const" to various function arguments.
+1-May:     Sam 9407 (audio.c) improvements thanks to Gerd Rausch.
+           clm.c mus_make_frame|mixer va_arg -> float bugfix.
+24-Apr:    added CSL headers.
+12-Apr:    Fernando Lopez-Lezcano provided a new ALSA port!
+           changed clm2scm to use built-in keyword support (use (read-set! keywords 'prefix))
+10-Apr:    version 10: many name changes (this time for sure!) -- use transnd.cl to update.
+	   Be audio support changed to reflect release 5.
+           Alsa also changed.
+1-Mar:     version 9.
+           added gdbm choice to sound.c, added sndlib2scm.h
+           changed to allow either floats or any-size "fraction" ints as internal data choice
+           removed mus_unshort_sound, added mus_write_to_buffer and mus_read_from_buffer
+           changed header macros to use SNDLIB_ -- old-sndlib.h has the old names
+           removed mus_float_sound (replaced by mus_read_from_buffer)
+1-Jan-00:  various changes to mus_outa etc.
+           changed (internal) mus_set_file_descriptor to include file name.
+           added buffer-full? and changed various macro names.
+           added mus_prescaler for problematic float files
+           brought headers.c loop support into sound.c, sndlib2scm, sndinfo.c.
+           added aiff loop info to write header via mus_set_aiff_loop_info
+
+2000 ----------------------------------------------------------------
+
+1-Dec:     added several more configure switches, sound_print_cache.
+           sound_max_amp returned vals in wrong order.
+           several improvements to src, granulate, and convolve thanks to Marc Lehmann.
+1-Nov:     version 8.
+           decided to make a non-compatible change: AIFF_sound file is now AIFC_sound_file,
+             and old_style_AIFF_sound_file is now AIFF_sound_file.
+12-Sep:    version 7.
+           ALSA port thanks to Paul Barton-Davis
+           fixed 2 bugs related to Sonorus Studio support
+           several clm.c/clm2scm.c bugs and oversights repaired.
+           added list2vct, mus_file2array, mus_array2file, dsp_devices.
+           added configure files, README.sndlib, changed tar file to use sndlib directory
+           added -1 as error return from various functions (void->int change in io.c and headers.c)
+           added mus_header_writable, mus_header_aiff_p, sound_aiff_p
+           much more of sndlib tied into sndlib2scm
+           tried to get SGI new AL default devices to work right
+           USE_BYTESWAP in io.c (if you want to use the GLibC macros).
+           added forget_sound to remove entry from sound data base.
+           added more vct funcs, formant-bank, oscil-bank, etc.
+1-Sep:     added mus_set_raw_header_defaults, mus_probe_file
+1-Aug:     old-sndlib.h for backwards compatibility, added mus_fwrite
+1-Jul:     added sound_max_amp, mus_error
+1-Jun:     version 6.
+           moved clm-specific code out of sndlib files 
+           changed many names to use "mus" prefix, or "SNDLIB" (and upper case)
+           added sound_frames
+           added clm.c, clm.h, vct.c, vct.h, clm2scm.c
+           added reopen_sound_output (arg order changed rev 6), mus_seek_frame, sound_seek_frame
+1-Mar:     version 5. 
+           changed float_sound to omit the scaling by SNDLIB_SNDFLT
+           removed perror calls
+           added sndlib2scm.c, sndlib-strings.h
+           fixed windoze audio_output bug
+           fixed Mac p2cstr potential bug
+1-Jan-99:  version 4. Sun-related word-alignment changes, C++ fixups
+
+1999 ----------------------------------------------------------------
+
+1-Dec:     version 3. removed output_scaler
+12-Oct:    version 2. removed header override functions
+1-Oct-98   version 1.
+

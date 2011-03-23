@@ -1,0 +1,24 @@
+"In a deemphasis function (as in a CD player), the filter has a
+single-order POLE at a 50 us time-constant (about 3.2 kHz) and a
+single-order ZERO at a 15 us time-constant (about 10.6 kHz).  So that
+the filter's gain stops dropping off at 6db/octave and actually
+flattens out asymptotically at the higher frequencies, with a voltage
+gain of 0.3 times the DC voltage gain)."
+ 
+ -- Ken Pohlman's "Principles of Digital Audio" 
+	(Howard Sams, ISBN 0-672-22634-0)
+
+In other words, the filter gain should be constant from 0 Hz to almost
+3.2 kHz, decrease as 1/(1+(f-3.2kHz)) for frequencies f above 3.2 kHz,
+and then level off to 0.3 above 10.6 kHz.  This may be accomplished
+using a one-pole, one-zero filter.  This type of filter is known as a
+"shelving" filter.
+
+Note that the error in high-frequency gain is 1/0.3 in the worst case
+if deemphasis is not done.  From an audio point of view, this means
+the highest frequencies (above 10.6 kHz) are 10.5 dB too loud; between
+3.2 kHz and 10.6 kHz, the gain ramps up linearly (on a dB scale).
+
+Note that for signal analysis applications, deemphasis may not be
+necessary at all (e.g., for pitch following, vocoding, or any signal
+processing in which the spectral envelope is normalized).

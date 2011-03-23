@@ -1,0 +1,3 @@
+..\..\pa_tests\pa_devs.c : \
+	"..\..\pa_common\portaudio.h"\
+	
